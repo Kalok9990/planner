@@ -3,7 +3,7 @@ Feature: Events page
 
   Scenario: As a user, I am able to see a list of all future events
     Given I am in the Events page
-    And I scroll down the page until the footer
+    And I look at the page content
     Then I can see a list of all events
 
   Scenario: As a user, I am able to click on a 'Workshop" and see more details
