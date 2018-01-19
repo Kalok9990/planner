@@ -25,7 +25,4 @@ class SignedIn
   def click_sign_in_button
     click_button("Sign in")
   end
-
-
-
 end

@@ -3,15 +3,19 @@ require 'capybara/dsl'
 class SignUpPage
   include Capybara::DSL
 
-  FIRST_NAME_FIELD = '#member_name'
-  SURNAME_FIELD = '#member_surname'
-  PRONOUNS_FIELD = '#member_pronouns'
-  EMAIL_FIELD = '#member_email'
-  DESCRIPTION_FIELD = '#member_about_you'
-  NEXT_BTN = '.button.round.right'
+  FIRST_NAME_FIELD = 'member_name'
+  SURNAME_FIELD = 'member_surname'
+  PRONOUNS_FIELD = 'member_pronouns'
+  EMAIL_FIELD = 'member_email'
+  DESCRIPTION_FIELD = 'member_about_you'
+  NEXT_BTN = 'Next'
 
   def first_name
     fill_in(FIRST_NAME_FIELD, :with => "test")
+  end
+
+  def find_member_name
+    find(:id, FIRST_NAME_FIELD)
   end
 
   def surname
@@ -30,8 +34,16 @@ class SignUpPage
     fill_in(DESCRIPTION_FIELD, :with => 'love to code')
   end
 
+  def full_form
+    first_name
+    surname
+    pronouns
+    email
+    description
+  end
+
   def click_next
-    find_link(NEXT_BTN).click
+    click_button(NEXT_BTN)
   end
 
 end

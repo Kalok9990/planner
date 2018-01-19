@@ -3,6 +3,8 @@ require 'capybara/dsl'
 class EventsPage
   include Capybara::DSL
 
+  BUTTON = '.button'
+
   def visit_events_page
     visit("/events")
   end
@@ -16,8 +18,20 @@ class EventsPage
     page.find(:id, 'minified')
   end
 
+  def find_workshop
+    page.find('section', text: 'Workshop')
+  end
+
   def click_workshop
-    page.find('section', text: 'Workshop').click_link('Workshop')
+    find_workshop.click_link('Workshop')
+  end
+
+  def find_event
+    page.find('section', text: 'Event')
+  end
+
+  def click_event
+    find_event.click_link('Event')
   end
 
   def visit_event
@@ -59,11 +73,15 @@ class EventsPage
   end
 
   def click_sign_up
-    find_link('Sign up')
+    find_link('Sign up').click
   end
 
   def sign_up_page
     page.find('h2', 'Sign up')
+  end
+
+  def click_button(click)
+    click_link(click)
   end
 
 end

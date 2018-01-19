@@ -47,4 +47,8 @@ class GitHub
   def click_authorization
     click_button(AUTHORIZATION_BTN_ID)
   end
+
+  def find_username
+    find(:id, USERNAME_FORM_ID)
+  end
 end

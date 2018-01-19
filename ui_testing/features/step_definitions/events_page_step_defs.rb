@@ -83,27 +83,40 @@ Then("I can see a list of all events") do
 end
 
 And("I click in Workshop or Event") do
-  pending # Write code here that turns the phrase above into concrete actions
+  if events_page.find_workshop
+    events_page.click_workshop
+  else
+    events_page.click_event
+  end
 end
 
 When("I am redirected to that event page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  events_page.visit_event
 end
 
 Then("I can see the title, company hosting the event, and location") do
-  pending # Write code here that turns the phrase above into concrete actions
+  events_page.event_details
 end
 
 And("I click in Workshop or Event and sign up") do
-  pending # Write code here that turns the phrase above into concrete actions
+  if events_page.find_workshop
+    events_page.click_workshop
+  else
+    events_page.click_event
+  end
+  events_page.click_sign_up
 end
 
-When("I press sign up as a student") do
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I press (.*)$/) do |press|
+  events_page.click_button(press)
 end
 
 And("I have to fill my form details") do
-  pending # Write code here that turns the phrase above into concrete actions
+  github.fill_username('Faker321')
+  github.fill_password('test123')
+  github.click_submit
+  sign_up_page.full_form
+  sign_up_page.click_next
 end
 
 When("I, as a student, choose between London, Brighton and Cambridge") do
@@ -114,16 +127,17 @@ Then("I am redirected to my profile page") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When("I press sign up as a coach") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 When("I, as a coach, choose between London, Brighton and Cambridge") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
 When("I click in Workshop or Event and log in") do
-  pending # Write code here that turns the phrase above into concrete actions
+  if events_page.find_workshop
+    events_page.click_workshop
+  else
+    events_page.click_event
+  end
+  events_page.click_login.click
 end
 
 Then("I am redirected to my dashboard page") do
@@ -135,10 +149,6 @@ And("I authorize my Github page") do
 end
 
 And("I click attend as a coach or a student") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("I press Attend") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 

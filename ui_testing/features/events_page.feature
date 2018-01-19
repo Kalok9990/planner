@@ -46,18 +46,18 @@ Feature: Events page
     When I am redirected to that event page
     Then I can see the title, company hosting the event, and location
 
-  Scenario: As a first time user, to subsribe to an event I need to sign up
+  Scenario Outline: As a first time user, to subsribe to an event I need to sign up
     Given I am in the Events page
     And I click in Workshop or Event and sign up
-    When I press sign up as a student
+    When I press <button>
     And I have to fill my form details
     When I, as a student, choose between London, Brighton and Cambridge
     Then I am redirected to my profile page
   # NEED A HOOK IN HERE!!!!!!!! - TO RESET THE DATABASE
-  Scenario: As a first time user, to subsribe to an event I need to sign up
+  Scenario Outline: As a first time user, to subsribe to an event I need to sign up
     Given I am in the Events page
     And I click in Workshop or Event and sign up
-    When I press sign up as a coach
+    When I press <button>
     And I have to fill my form details
     When I, as a coach, choose between London, Brighton and Cambridge
     Then I am redirected to my profile page
@@ -76,22 +76,29 @@ Feature: Events page
     When I, as a coach, choose between London, Brighton and Cambridge
     Then I am redirected to my profile page
 
-  Scenario: As a user previously registered, to subsribe to an event I need to sign up
+  Scenario Outline: As a user previously registered, to subsribe to an event I need to sign up
     Given I am in the Events page
     And I click in Workshop or Event and sign up
-    When I press sign up as a student
+    When I press <button>
     Then I am redirected to my dashboard page
   # NEED A HOOK IN HERE!!!!!!!! - TO SIGN OUT AFTER THIS SCENARIO
-  Scenario: As a user previously registered, to subsribe to an event I need to sign up
+  Scenario Outline: As a user previously registered, to subsribe to an event I need to sign up
     Given I am in the Events page
     And I click in Workshop or Event and sign up
-    When I press sign up as a coach
+    When I press <button>
     And I authorize my Github page
     Then I am redirected to my dashboard page
   # NEED A HOOK IN HERE!!!!!!!! - TO SIGN OUT AFTER THIS SCENARIO
-  Scenario: As a user previously registered, to subsribe to an event I need to log in
+  Scenario Outline: As a user previously registered, to subsribe to an event I need to log in
     Given I am in the Events page
     When I click in Workshop or Event and log in
     And I click attend as a coach or a student
-    When I press Attend
+    When I press <button>
     Then I can see a message Thanks for getting back to us...
+
+
+    Examples:
+    | button               |
+    | Sign up as a student |
+    | Sign up as a coach   |
+    | Attend               |
