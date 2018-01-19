@@ -6,9 +6,9 @@ require_relative '../lib/pages/new_member_page'
 require_relative '../lib/pages/github'
 require_relative '../lib/pages/socialmedia'
 require_relative '../lib/pages/sign_in'
+require_relative '../lib/pages/donate_page'
 require_relative '../lib/pages/events_page'
 require_relative '../lib/pages/sign_up_page'
-
 
 module CodeBar
 
@@ -40,6 +40,7 @@ module CodeBar
     SignedIn.new
   end
 
+<<<<<<< HEAD
   def events_page
     EventsPage.new
   end
@@ -47,4 +48,10 @@ module CodeBar
   def sign_up_page
     SignUpPage.new
   end
+=======
+  def donation
+    DonatePage.new
+  end
+
+>>>>>>> dev
 end
