@@ -7,6 +7,7 @@ require_relative '../lib/pages/github'
 require_relative '../lib/pages/socialmedia'
 require_relative '../lib/pages/sign_in'
 require_relative '../lib/pages/events_page'
+require_relative '../lib/pages/sign_up_page'
 
 
 module CodeBar
@@ -41,5 +42,9 @@ module CodeBar
 
   def events_page
     EventsPage.new
+  end
+
+  def sign_up_page
+    SignUpPage.new
   end
 end

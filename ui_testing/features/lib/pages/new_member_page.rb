@@ -18,4 +18,12 @@ class NewMember
   def find_profile
     find_link('Menu')
   end
+
+  def find_sign_up_student
+    find_link('I understand and meet the eligibility criteria. Sign me up as a student')
+  end
+
+  def find_sign_up_coach
+    find_link('Sign up as a coach')
+  end
 end

@@ -34,20 +34,36 @@ class EventsPage
     find_link('Log in')
   end
 
-  def find_button
-    page.find(:css, '.button.round')
+  def find_coach
+    find_link('Attend as a coach')
   end
 
   def click_coach
-
+    find_coach.click
   end
 
   def find_student
-
+    find_link('Attend as a student')
   end
 
   def click_student
+    find_student.click
+  end
 
+  def find_attend
+    find_link('Attend')
+  end
+
+  def click_attend
+    find_attend.click
+  end
+
+  def click_sign_up
+    find_link('Sign up')
+  end
+
+  def sign_up_page
+    page.find('h2', 'Sign up')
   end
 
 end
