@@ -48,8 +48,26 @@ And("I click attend as a coach or a student") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When(/^I press (.*)$/) do |press|
-  events_page.click_button(press)
+# When(/^I press (.*)$/) do |press|
+#   events_page.click_button(press)
+# end
+
+When("I press Sign up as a coach") do
+  events_page.click_button(" coach")
+end
+
+When("I press Sign up as a student") do
+  events_page.click_button(" student")
+end
+
+When("I press Attend") do
+  events_page.click_button("Attend")
+end
+
+And("I sign into Github") do
+  github.fill_username('Faker321')
+  github.fill_password('test123')
+  github.click_submit
 end
 
 And("I authorize my Github page") do

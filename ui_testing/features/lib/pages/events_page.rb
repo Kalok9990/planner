@@ -38,6 +38,14 @@ class EventsPage
     find('p', 'Attend our workshops to learn programming in a safe and supportive environment at your own pace, or to share your knowledge and coach our students.')
   end
 
+  def sign_up_coach
+    find('a', 'Sign up as a coach')
+  end
+
+  def sign_up_student
+    find('a', 'I understand and meet the eligibility criteria. Sign me up as a student')
+  end
+
   def event_details
     page.find(:css, '.large-12.columns')
     page.find(:css, '.medium-8.columns')
