@@ -46,15 +46,6 @@ When("I click in Workshop or Event and log in") do
     events_page.click_event
   end
   events_page.click_login.click
-  if github.find_username
-    github.fill_username('Faker321')
-    github.fill_password('test123')
-    github.click_submit
-  end
-  if github.find_authorization
-    github.click_authorization
-  end
-
 end
 
 And("I click attend as a coach or a student") do
@@ -69,11 +60,11 @@ And("I select the event I want to cancel") do
 
 end
 
-When("I press Sign up as a coach") do
+When("I click Sign up as a coach") do
   events_page.click_button(" coach")
 end
 
-When("I press Sign up as a student") do
+When("I click Sign up as a student") do
   events_page.click_button(" student")
 end
 

@@ -15,7 +15,7 @@ Feature: Events page
   Scenario: As a user previously registered, to subsribe to an event I need to sign up
     Given I am in the Events page
     And I click in Workshop or Event and sign up
-    When I press Sign up as a coach
+    When I click Sign up as a coach
     And I sign into Github
     Then I am redirected to my dashboard page
 
@@ -23,7 +23,7 @@ Feature: Events page
   Scenario: As a user previously registered, to subsribe to an event I need to sign up
     Given I am in the Events page
     And I click in Workshop or Event and sign up
-    When I press Sign up as a student
+    When I click Sign up as a student
     Then I am redirected to my dashboard page
 
   @sign_out
@@ -34,9 +34,9 @@ Feature: Events page
     When I choose what I want to work on and press Attend
     Then I can see a message Thanks for getting back to us
 
-  Scenario: As a user, I can cancel my subscription to an event
-    Given I am in the Events page
-    When I click in Invitations on the Menu
-    And I select the event I want to cancel
-    When I choose I can no longer attend
-    Then I can see a message We are so sad you can't make it, but thanks for letting us know 
+  # Scenario: As a user, I can cancel my subscription to an event
+  #   Given I am in the Events page
+  #   When I click in Invitations on the Menu
+  #   And I select the event I want to cancel
+  #   When I choose I can no longer attend
+  #   Then I can see a message We are so sad you can't make it, but thanks for letting us know

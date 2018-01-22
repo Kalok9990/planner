@@ -52,4 +52,8 @@ module CodeBar
     DonatePage.new
   end
 
+  def invitations_page
+    Invitation.new
+  end
+
 end
