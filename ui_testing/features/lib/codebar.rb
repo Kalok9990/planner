@@ -9,6 +9,7 @@ require_relative '../lib/pages/sign_in'
 require_relative '../lib/pages/donate_page'
 require_relative '../lib/pages/events_page'
 require_relative '../lib/pages/sign_up_page'
+require_relative '../lib/pages/invitations_page'
 
 module CodeBar
 

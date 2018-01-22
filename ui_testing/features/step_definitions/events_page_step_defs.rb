@@ -35,8 +35,10 @@ When("I click in Workshop or Event and sign up") do
   events_page.click_sign_up
 end
 
-When("I click in Invitations on the Menu") do
-  #pending
+When("I sign in and click Invitations on the Menu") do
+  sign_in_page.click_sign_in
+  sign_in_page.click_menu_tab
+  sign_in_page.click_invitations
 end
 
 When("I click in Workshop or Event and log in") do
@@ -57,7 +59,7 @@ And("I click attend as a coach or a student") do
 end
 
 And("I select the event I want to cancel") do
-
+  invitations_page.event_to_cancel
 end
 
 When("I click Sign up as a coach") do
@@ -69,13 +71,12 @@ When("I click Sign up as a student") do
 end
 
 When("I choose I can no longer attend") do
-
+  invitations_page.cancel_attendance
 end
 
 When("I choose what I want to work on and press Attend") do
   events_page.select_option.click
   events_page.work_on_option.click
-  # events_page.click_button("Attend")
 end
 
 And("I sign into Github") do
@@ -95,6 +96,6 @@ Then("I can see a message Thanks for getting back to us") do
   events_page.thanks_message
 end
 
-Then("I can see a message We are so sad you can't make it, but thanks for letting us know") do
-
+Then("I can see the message We are so sad you can't make it, but thanks for letting us know") do
+  invitations_page.cancelled_message
 end

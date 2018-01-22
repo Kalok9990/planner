@@ -3,9 +3,18 @@ require 'capybara/dsl'
 class Invitation
   include Capybara::DSL
 
-  STUDENT_TEXT = 'Sign up as a student'
-  COACH_TEXT = 'Sign up as a coach'
-  WORKSHOP_TEXT = 'Host a workshop'
+  def event_to_cancel
+    page.find('a', '.button.round.expand').click
+  end
+
+  def cancel_attendance
+    page.find('a', 'I can no longer attend').click
+  end
+
+  def cancelled_message
+    # page.find('div', '.alert-box.info')
+    page.find('div', "We are so sad you can't make it, but thanks for letting us know")
 
 
+  end
 end

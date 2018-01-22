@@ -66,4 +66,8 @@ class SignedIn
     find('a', :text => "My Dashboard")
   end
 
+  def click_invitations
+    find('a', :text => "Invitations").click
+  end
+
 end
