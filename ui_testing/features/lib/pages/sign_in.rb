@@ -32,8 +32,6 @@ class SignedIn
   def click_sign_in_button
     click_button("Sign in")
   end
-<<<<<<< HEAD
-=======
 
   def click_barcelona_student_subscription
     # click_on("Subscribe")
@@ -64,7 +62,8 @@ class SignedIn
     find('a', :text => "My Dashboard").click
   end
 
+  def find_dashboard
+    find('a', :text => "My Dashboard")
+  end
 
-
->>>>>>> dev
 end

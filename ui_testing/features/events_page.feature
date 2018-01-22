@@ -58,7 +58,6 @@ Feature: Events page
     Given I am in the Events page
     And I click in Workshop or Event and sign up
     When I press Sign up as a student
-    And I authorize my Github page
     Then I am redirected to my dashboard page
 
   # NEED A HOOK IN HERE!!!!!!!! - TO SIGN OUT AFTER THIS SCENARIO

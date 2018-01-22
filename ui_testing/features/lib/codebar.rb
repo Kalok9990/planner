@@ -40,7 +40,6 @@ module CodeBar
     SignedIn.new
   end
 
-<<<<<<< HEAD
   def events_page
     EventsPage.new
   end
@@ -48,10 +47,9 @@ module CodeBar
   def sign_up_page
     SignUpPage.new
   end
-=======
+
   def donation
     DonatePage.new
   end
 
->>>>>>> dev
 end

@@ -11,10 +11,12 @@ Then("I can see a list of all events") do
 end
 
 And("I click in Workshop or Event") do
-  if events_page.find_workshop
-    events_page.click_workshop
-  else
+  if events_page.find_event
     events_page.click_event
+  # if events_page.find_workshop
+  #   events_page.click_workshop
+  else
+    events_page.click_workshop
   end
 end
 
@@ -45,7 +47,11 @@ When("I click in Workshop or Event and log in") do
 end
 
 And("I click attend as a coach or a student") do
-  pending # Write code here that turns the phrase above into concrete actions
+  if events_page.find_student
+    events_page.click_student
+  else
+    events_page.click_coach
+  end
 end
 
 # When(/^I press (.*)$/) do |press|
@@ -70,12 +76,11 @@ And("I sign into Github") do
   github.click_submit
 end
 
-And("I authorize my Github page") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 Then("I am redirected to my dashboard page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  if github.find_authorization
+    github.click_authorization
+  end
+  sign_in_page.find_dashboard
 end
 
 Then("I can see a message Thanks for getting back to us...") do
