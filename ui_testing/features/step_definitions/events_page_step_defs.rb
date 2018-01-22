@@ -11,10 +11,8 @@ Then("I can see a list of all events") do
 end
 
 And("I click in Workshop or Event") do
-  if events_page.find_event
-    events_page.click_event
-  # if events_page.find_workshop
-  #   events_page.click_workshop
+  if events_page.find_workshop
+    events_page.click_workshop
   else
     events_page.click_workshop
   end
@@ -54,10 +52,6 @@ And("I click attend as a coach or a student") do
   end
 end
 
-# When(/^I press (.*)$/) do |press|
-#   events_page.click_button(press)
-# end
-
 When("I press Sign up as a coach") do
   events_page.click_button(" coach")
 end
@@ -86,15 +80,3 @@ end
 Then("I can see a message Thanks for getting back to us...") do
   pending # Write code here that turns the phrase above into concrete actions
 end
-
-
-
-
-#
-# And("I have to fill my form details") do
-#   github.fill_username('Faker321')
-#   github.fill_password('test123')
-#   github.click_submit
-#   sign_up_page.full_form
-#   sign_up_page.click_next
-# end
