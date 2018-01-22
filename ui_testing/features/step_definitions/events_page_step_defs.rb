@@ -56,7 +56,7 @@ end
 And("I click attend as a coach or a student") do
   if events_page.find_student
     events_page.click_student
-  else
+  elsif events_page.find_coach
     events_page.click_coach
   end
 end
