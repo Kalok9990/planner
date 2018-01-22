@@ -9,3 +9,8 @@ After ("@sub_student") do
   github.click_profile_icon
   github.click_sign_out
 end
+
+After ("@sign_out") do
+  sign_in_page.click_menu_tab
+  sign_in_page.click_sign_out_link
+end

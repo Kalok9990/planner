@@ -35,6 +35,10 @@ When("I click in Workshop or Event and sign up") do
   events_page.click_sign_up
 end
 
+When("I click in Invitations on the Menu") do
+  #pending
+end
+
 When("I click in Workshop or Event and log in") do
   if events_page.find_workshop
     events_page.click_workshop
@@ -42,6 +46,15 @@ When("I click in Workshop or Event and log in") do
     events_page.click_event
   end
   events_page.click_login.click
+  if github.find_username
+    github.fill_username('Faker321')
+    github.fill_password('test123')
+    github.click_submit
+  end
+  if github.find_authorization
+    github.click_authorization
+  end
+
 end
 
 And("I click attend as a coach or a student") do
@@ -52,6 +65,10 @@ And("I click attend as a coach or a student") do
   end
 end
 
+And("I select the event I want to cancel") do
+
+end
+
 When("I press Sign up as a coach") do
   events_page.click_button(" coach")
 end
@@ -60,8 +77,14 @@ When("I press Sign up as a student") do
   events_page.click_button(" student")
 end
 
-When("I press Attend") do
-  events_page.click_button("Attend")
+When("I choose I can no longer attend") do
+
+end
+
+When("I choose what I want to work on and press Attend") do
+  events_page.select_option.click
+  events_page.work_on_option.click
+  # events_page.click_button("Attend")
 end
 
 And("I sign into Github") do
@@ -77,6 +100,10 @@ Then("I am redirected to my dashboard page") do
   sign_in_page.find_dashboard
 end
 
-Then("I can see a message Thanks for getting back to us...") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("I can see a message Thanks for getting back to us") do
+  events_page.thanks_message
+end
+
+Then("I can see a message We are so sad you can't make it, but thanks for letting us know") do
+
 end

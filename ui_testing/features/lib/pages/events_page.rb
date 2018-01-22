@@ -4,6 +4,7 @@ class EventsPage
   include Capybara::DSL
 
   BUTTON = '.button'
+  LONDON_STUDENTS = '#london-students'
 
   def visit_events_page
     visit("/events")
@@ -90,6 +91,26 @@ class EventsPage
 
   def click_button(click)
     click_link(click)
+  end
+
+  def fail_student_coach
+    page.find('a', 'Please tell us whether you want to attend as a student or coach.')
+  end
+
+  def click_fail
+    fail_student_coach.click
+  end
+
+  def select_option
+    page.find(:id, 'session_invitation_note_chosen')
+  end
+
+  def work_on_option
+    page.find(:css, '.active-result.result-selected')
+  end
+
+  def thanks_message
+    page.find('div', 'Thanks for getting back to us ')
   end
 
 end
