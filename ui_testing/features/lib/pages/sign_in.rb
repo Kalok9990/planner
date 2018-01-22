@@ -62,6 +62,8 @@ class SignedIn
     find('a', :text => "My Dashboard").click
   end
 
-
+  def click_jobs_on_menu
+    page.find('aside', text: 'Jobs').click_link('Jobs')
+  end
 
 end

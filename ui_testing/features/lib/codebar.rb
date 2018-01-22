@@ -42,4 +42,8 @@ module CodeBar
     DonatePage.new
   end
 
+  def jobs
+    Jobs.new
+  end
+
 end
