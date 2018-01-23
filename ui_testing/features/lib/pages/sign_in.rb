@@ -62,11 +62,9 @@ class SignedIn
     find('a', :text => "My Dashboard").click
   end
 
-<<<<<<< HEAD
   def click_jobs_on_menu
     page.find('aside', text: 'Jobs').click_link('Jobs')
   end
-=======
   def click_random_workshop
     find('a', :text => 'Android Development Workshop').click
   end
@@ -86,6 +84,5 @@ class SignedIn
   end
 
 
->>>>>>> dev
 
 end
