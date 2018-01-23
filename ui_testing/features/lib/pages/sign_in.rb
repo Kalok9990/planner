@@ -84,7 +84,6 @@ class SignedIn
     end
   end
 
-
   def click_invitations
     find('a', :text => "Invitations").click
   end

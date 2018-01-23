@@ -10,6 +10,7 @@ require_relative '../lib/pages/donate_page'
 require_relative '../lib/pages/events_page'
 require_relative '../lib/pages/sign_up_page'
 require_relative '../lib/pages/invitations_page'
+require_relative '../lib/pages/update_profile_page'
 
 module CodeBar
 
@@ -55,6 +56,10 @@ module CodeBar
 
   def invitations_page
     Invitation.new
+  end
+
+  def update_profile
+    UpdateProfile.new
   end
 
 end
