@@ -1,5 +1,5 @@
 Given("I am on the dashboard page") do
-  navbar.visit_home_page
+  sign_in_page.visit_dashboard
   sign_in_page.click_sign_in
   sign_in_page.fill_in_sign_in_username
   sign_in_page.fill_in_sign_in_password

@@ -5,4 +5,4 @@ Feature: User adding new subscriptions
     Given I start at the dashboard page
     And I click on the edit link next to subscriptions.
     When I click on any chapter coach subscription
-    Then I should see the appropriate success message informing the user has subscribed or unsubscriped as a coach
+    Then I should see the appropriate success message informing the user has subscribed or unsubscribed as a coach

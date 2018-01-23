@@ -10,6 +10,11 @@ When("I click on any chapter coach subscription") do
   sign_in_page.click_london_coach_subscription
 end
 
+<<<<<<< HEAD
+Then("I should see the appropriate success message informing the user has subscribed or unsubscribed as a coach") do
+  expect(sign_in_page.get_success_subscription_message).to include("You have subscribed to ").or include("You have unsubscribed from ")
+=======
 Then("I should see the appropriate success message informing the user has subscribed or unsubscriped as a coach") do
   expect(sign_in_page.get_success_subscription_message).to include("You have subscribed to Brighton's Coaches group").or include("You have unsubscribed from Brighton's Coaches group")
+>>>>>>> dev
 end
