@@ -52,10 +52,7 @@ class GitHub
     click_button(AUTHORIZATION_BTN_ID)
   end
 
-<<<<<<< HEAD
   def find_username
     find(:id, USERNAME_FORM_ID)
   end
-=======
->>>>>>> dev
 end
