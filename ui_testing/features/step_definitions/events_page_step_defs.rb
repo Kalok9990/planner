@@ -42,25 +42,32 @@ When("I sign in and click Invitations on the Menu") do
 end
 
 When("I click in Workshop or Event and log in") do
-  if sign_up_page.find_member_name
-    sign_up_page.full_form
-  end
   if events_page.find_workshop
     events_page.click_workshop
   else
     events_page.click_event
   end
-  events_page.click_login.click
+  events_page.click_login
+  if github.find_username
+    github.fill_username('Faker321')
+    github.fill_password('test123')
+    github.click_submit
+  end
+  if github.find_authorization
+    github.click_authorization
+  end
+  # if sign_up_page.find_member_name
+  #   sign_up_page.full_form
+  # end
 end
 
 And("I click attend as a coach or a student") do
-  if sign_up_page.find_member_name
-    sign_up_page.full_form
-  end
   if events_page.find_student
     events_page.click_student
   elsif events_page.find_coach
     events_page.click_coach
+  else sign_up_page.find_member_name
+    sign_up_page.full_form
   end
 end
 

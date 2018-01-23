@@ -54,7 +54,7 @@ class EventsPage
   end
 
   def click_login
-    find_link('Log in')
+    find_link('Log in').click
   end
 
   def find_coach
