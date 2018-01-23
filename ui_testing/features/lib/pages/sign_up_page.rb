@@ -3,7 +3,7 @@ require 'capybara/dsl'
 class SignUpPage
   include Capybara::DSL
 
-  FIRST_NAME_FIELD = 'member_name'
+  FIRST_NAME_FIELD = '#member_name'
   SURNAME_FIELD = 'member_surname'
   PRONOUNS_FIELD = 'member_pronouns'
   EMAIL_FIELD = 'member_email'

@@ -9,6 +9,10 @@ class SignedIn
   BARCELONA_STUDENT_SUBSCRIPTION_ID = "barcelona-students"
   MENU_TAB_ID = "profile"
 
+  def visit_dashboard
+    visit('/dashboard')
+  end
+
   def find_sign_in
     find('a', :text => "Sign in")
   end
