@@ -84,11 +84,22 @@ class SignedIn
     end
   end
 
+  def click_my_profile_on_menu
+    find('aside', :text => 'My Profile').click_link('My Profile')
+  end
+
+  def click_jobs_on_menu
+    find('aside', :text => 'Jobs').click_link('Jobs')
+  end
+
+  def click_update_profile
+    find('aside', :text => 'My Profile').click_link('Update your details')
+  end
+
   def click_invitations
     find('a', :text => "Invitations").click
   end
 
   def find_dashboard
     find('a', :text => "My Dashboard")
-  end
 end
