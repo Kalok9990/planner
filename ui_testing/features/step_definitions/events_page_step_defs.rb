@@ -42,9 +42,9 @@ When("I sign in and click Invitations on the Menu") do
 end
 
 When("I click in Workshop or Event and log in") do
-  # if sign_up_page.find_member_name
-  #   sign_up_page.full_form
-  # end
+  if sign_up_page.find_member_name
+    sign_up_page.full_form
+  end
   if events_page.find_workshop
     events_page.click_workshop
   else
@@ -54,6 +54,9 @@ When("I click in Workshop or Event and log in") do
 end
 
 And("I click attend as a coach or a student") do
+  if sign_up_page.find_member_name
+    sign_up_page.full_form
+  end
   if events_page.find_student
     events_page.click_student
   elsif events_page.find_coach
