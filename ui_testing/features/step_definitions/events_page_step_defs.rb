@@ -52,13 +52,13 @@ When("I click in Workshop or Event and log in") do
     github.fill_username('Faker321')
     github.fill_password('test123')
     github.click_submit
+  else sign_up_page.find_member_name
+    sign_up_page.full_form
+    sign_up_page.click_next
   end
   if github.find_authorization
     github.click_authorization
   end
-  # if sign_up_page.find_member_name
-  #   sign_up_page.full_form
-  # end
 end
 
 And("I click attend as a coach or a student") do

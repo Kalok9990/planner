@@ -12,9 +12,6 @@ class Invitation
   end
 
   def cancelled_message
-    # page.find('div', '.alert-box.info')
     page.find('div', "We are so sad you can't make it, but thanks for letting us know")
-
-
   end
 end
