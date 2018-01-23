@@ -65,6 +65,11 @@ class SignedIn
   def click_jobs_on_menu
     page.find('aside', text: 'Jobs').click_link('Jobs')
   end
+
+  def click_my_profile_on_menu
+    page.find('aside', text: 'My Profile').click_link('My Profile')
+  end
+
   def click_random_workshop
     find('a', :text => 'Android Development Workshop').click
   end

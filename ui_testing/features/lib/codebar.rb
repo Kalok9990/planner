@@ -46,4 +46,8 @@ module CodeBar
     Jobs.new
   end
 
+  def profile
+    Profile.new
+  end
+
 end
