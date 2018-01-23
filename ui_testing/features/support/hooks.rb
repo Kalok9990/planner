@@ -14,3 +14,11 @@ After ("@sign_out") do
   sign_in_page.click_menu_tab
   sign_in_page.click_sign_out_link
 end
+<<<<<<< HEAD
+=======
+
+Before ("@before_hook_sign_out") do
+  sign_in_page.click_menu_tab
+  sign_in_page.click_sign_out_link
+end
+>>>>>>> dev
